@@ -5,6 +5,22 @@ const convertedValueF = document.getElementById('convertedValueF')
 const convertedValueC = document.getElementById('convertedValueC')
 
 //----- CELCIUS TO FAHRENHEIT-----
+
+// ---- Atualização do resultado conforme preenchimento do Input -----
+CelciusToF.addEventListener('input', function (){
+    
+    if (CelciusToF.value !== '' ) {
+
+        const result = CelciusToFCalc(CelciusToF.value).toFixed(2)
+        convertedValueF.value =  result + "°F"
+
+    } else{
+		convertedValueF.value = ''
+	}
+	
+})
+
+// ---- Atualização do resultado clicando no botão -----
 document.getElementById('ConvertFBtn').addEventListener('click', function (){
     
     if (CelciusToF.value !== '' ) {
@@ -22,6 +38,21 @@ function CelciusToFCalc(CelciusToF) {
 }
 
 //----- FAHRENHEIT TO CELCIUS -----
+
+// ---- Atualização do resultado conforme preenchimento do Input -----
+FToCelcius.addEventListener('input', function (){
+	
+  	if (FToCelcius.value !== '' ) { 
+		
+        const result = FToCelciusCalc(FToCelcius.value).toFixed(2)
+        convertedValueC.value =  result + "°C"
+
+    } else{
+		convertedValueF.value = ''
+	}
+	
+})
+// ---- Atualização do resultado clicando no botão -----
 document.getElementById('ConvertCBtn').addEventListener('click', function (){
     
     if (FToCelcius.value !== '' ) {
